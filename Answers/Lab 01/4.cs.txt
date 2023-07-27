@@ -1,0 +1,24 @@
+using System;
+
+namespace SalaryAfterTaxConsoleApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter employee's salary: ");
+            double salary = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter tax rate (in decimal): ");
+            double taxRate = Convert.ToDouble(Console.ReadLine());
+
+            double taxAmount = salary * taxRate;
+            double salaryAfterTax = salary - taxAmount;
+
+            Console.WriteLine("Salary after tax: " + salaryAfterTax);
+
+            // Pause the console to see the output.
+            Console.ReadKey();
+        }
+    }
+}

@@ -1,0 +1,42 @@
+using System;
+
+// Base class
+class Animal
+{
+    public void DisplayAnimal()
+    {
+        Console.WriteLine("I am an Animal");
+    }
+}
+
+// Derived class
+class Dog : Animal
+{
+    public void DisplayDog()
+    {
+        Console.WriteLine("I have four legs");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // Create object of Dog class
+        Dog dog = new Dog();
+
+        // Display the combined message
+        Console.Write(" ");
+        dog.DisplayAnimal();
+        Console.Write(" ");
+        dog.DisplayDog();
+    }
+}
+
+
+
+
+###output###
+
+I am an Animal
+I have four legs

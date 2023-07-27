@@ -1,0 +1,31 @@
+using System;
+
+namespace BasicCalculator
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter the first number: ");
+            double num1 = Convert.ToDouble(Console.ReadLine());
+
+            Console.Write("Enter the second number: ");
+            double num2 = Convert.ToDouble(Console.ReadLine());
+
+            double sum = num1 + num2;
+            double subtraction = num1 - num2;
+            double multiplication = num1 * num2;
+
+            // Avoid division by zero
+            double division = num2 != 0 ? num1 / num2 : 0;
+
+            Console.WriteLine("Sum: " + sum);
+            Console.WriteLine("Subtraction: " + subtraction);
+            Console.WriteLine("Multiplication: " + multiplication);
+            Console.WriteLine("Division: " + division);
+
+            // Pause the console to see the output.
+            Console.ReadKey();
+        }
+    }
+}

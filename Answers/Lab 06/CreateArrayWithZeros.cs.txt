@@ -1,0 +1,24 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter the size of the array: ");
+        if (int.TryParse(Console.ReadLine(), out int size) && size > 0)
+        {
+            ArrayProcessor arrayProcessor = new ArrayProcessor();
+            int[] resultArray = arrayProcessor.CreateArrayWithZeros(size);
+
+            Console.WriteLine("Array with zeros:");
+            for (int i = 0; i < resultArray.Length; i++)
+            {
+                Console.Write($"{resultArray[i]} ");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Invalid array size. Please enter a positive integer.");
+        }
+    }
+}

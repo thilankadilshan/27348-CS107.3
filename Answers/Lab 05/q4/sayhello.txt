@@ -1,0 +1,13 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        HelloClass helloObj = new HelloClass();
+
+        // Try to call the sayHello() method
+        // This will result in a compilation error since sayHello() is private.
+        helloObj.sayHello();
+    }
+}

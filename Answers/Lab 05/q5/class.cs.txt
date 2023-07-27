@@ -1,0 +1,41 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] arr = new int[10];
+
+        Console.WriteLine("Enter 10 integer values:");
+
+        for (int i = 0; i < 10; i++)
+        {
+            Console.Write($"Element {i + 1}: ");
+            if (int.TryParse(Console.ReadLine(), out int value))
+            {
+                arr[i] = value;
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter an integer value.");
+                i--;
+            }
+        }
+
+        int minValue = ArrayUtility.FindMinimum(arr);
+        int maxValue = ArrayUtility.FindMaximum(arr);
+        double avgValue = ArrayUtility.FindAverage(arr);
+
+        Console.WriteLine($"Minimum value: {minValue}");
+        Console.WriteLine($"Maximum value: {maxValue}");
+        Console.WriteLine($"Average value: {avgValue}");
+
+        ArrayUtility.ReverseArray(arr);
+
+        Console.WriteLine("Reversed array:");
+        for (int i = 0; i < arr.Length; i++)
+        {
+            Console.Write($"{arr[i]} ");
+        }
+    }
+}

@@ -1,0 +1,24 @@
+using System;
+
+namespace SumOfOddNumbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter a positive integer: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+
+            int sum = 0;
+            for (int i = 1; i <= n; i += 2)
+            {
+                sum += i;
+            }
+
+            Console.WriteLine("Sum of odd numbers from 1 to " + n + ": " + sum);
+
+            // Pause the console to see the output.
+            Console.ReadKey();
+        }
+    }
+}

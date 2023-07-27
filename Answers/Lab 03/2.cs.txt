@@ -1,0 +1,27 @@
+using System;
+
+namespace VowelCounter
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter a string: ");
+            string input = Console.ReadLine().ToLower();
+
+            int vowelCount = 0;
+            foreach (char c in input)
+            {
+                if ("aeiou".Contains(c))
+                {
+                    vowelCount++;
+                }
+            }
+
+            Console.WriteLine("Number of vowels: " + vowelCount);
+
+            // Pause the console to see the output.
+            Console.ReadKey();
+        }
+    }
+}

@@ -1,0 +1,7 @@
+public class HelloClass
+{
+    private void sayHello()
+    {
+        Console.WriteLine("Hello, world!");
+    }
+}

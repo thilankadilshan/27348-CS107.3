@@ -1,0 +1,46 @@
+def get_array_from_user(size):
+    array = []
+    for i in range(size):
+        while True:
+            try:
+                value = int(input(f"Enter the value for element {i + 1}: "))
+                break
+            except ValueError:
+                print("Invalid input. Please enter an integer.")
+        array.append(value)
+    return array
+
+def scalar_sum(array):
+    return sum(array)
+
+def vector_sum(array1, array2):
+    return [x + y for x, y in zip(array1, array2)]
+
+def vector_product(array1, array2):
+    return [x * y for x, y in zip(array1, array2)]
+
+def scalar_product(array1, array2):
+    product_array = vector_product(array1, array2)
+    return sum(product_array)
+
+def main():
+    size = int(input("Enter the size of the arrays: "))
+
+    print("\nEnter values for the first array:")
+    array1 = get_array_from_user(size)
+
+    print("\nEnter values for the second array:")
+    array2 = get_array_from_user(size)
+
+    scalar_sum_result = scalar_sum(array1)
+    vector_sum_result = vector_sum(array1, array2)
+    vector_product_result = vector_product(array1, array2)
+    scalar_product_result = scalar_product(array1, array2)
+
+    print("\nScalar Sum:", scalar_sum_result)
+    print("Vector Sum:", vector_sum_result)
+    print("Vector Product:", vector_product_result)
+    print("Scalar Product:", scalar_product_result)
+
+if __name__ == "__main__":
+    main()

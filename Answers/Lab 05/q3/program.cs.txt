@@ -1,0 +1,54 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        CalculateValues calculator = new CalculateValues();
+
+        Console.WriteLine("Enter 1 for addition");
+        Console.WriteLine("Enter 2 for subtraction");
+        Console.WriteLine("Enter 3 for multiplication");
+        Console.WriteLine("Enter 4 for division");
+
+        Console.Write("Enter your choice: ");
+        int choice = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter number 1: ");
+        int num1 = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Enter number 2: ");
+        int num2 = Convert.ToInt32(Console.ReadLine());
+
+        int result = 0;
+
+        switch (choice)
+        {
+            case 1:
+                result = calculator.Addition(num1, num2);
+                break;
+            case 2:
+                result = calculator.Subtraction(num1, num2);
+                break;
+            case 3:
+                result = calculator.Multiplication(num1, num2);
+                break;
+            case 4:
+                try
+                {
+                    result = calculator.Division(num1, num2);
+                }
+                catch (DivideByZeroException ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                    return;
+                }
+                break;
+            default:
+                Console.WriteLine("Invalid choice.");
+                return;
+        }
+
+        Console.WriteLine("Your answer is: " + result);
+    }
+}
